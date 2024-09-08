@@ -147,78 +147,78 @@ export const totalUsersQueryResult: TotalUsersQueryResult = {
 
 export const activeUsersQueryResult: ActiveUsersQueryResult = {
   ...totalUsersQueryResult,
-  value: totalUsersQueryResult.value * 0.2, // 20% of users are active
+  value: Math.round(totalUsersQueryResult.value * 0.2), // 20% of users are active
 };
 
 export const userMetricsPeriodQueryResult: UserMetricsPeriodQueryResult = [
   {
     fromDate: new Date("09/01/2023"),
     toDate: new Date("09/30/2023"),
-    value: totalUsersQueryResult.value * 0.1,
+    value: Math.round(totalUsersQueryResult.value * 0.1),
   },
   {
     fromDate: new Date("10/01/2023"),
     toDate: new Date("10/31/2023"),
-    value: totalUsersQueryResult.value * 0.14,
+    value: Math.round(totalUsersQueryResult.value * 0.14),
   },
   {
     fromDate: new Date("11/01/2023"),
     toDate: new Date("11/30/2023"),
-    value: totalUsersQueryResult.value * 0.21,
+    value: Math.round(totalUsersQueryResult.value * 0.21),
   },
   {
     fromDate: new Date("12/01/2023"),
     toDate: new Date("12/31/2023"),
-    value: totalUsersQueryResult.value * 0.27,
+    value: Math.round(totalUsersQueryResult.value * 0.27),
   },
   {
     fromDate: new Date("1/01/2023"),
     toDate: new Date("1/31/2023"),
-    value: totalUsersQueryResult.value * 0.4,
+    value: Math.round(totalUsersQueryResult.value * 0.4),
   },
   {
     fromDate: new Date("1/01/2023"),
     toDate: new Date("1/31/2023"),
-    value: totalUsersQueryResult.value * 0.45,
+    value: Math.round(totalUsersQueryResult.value * 0.45),
   },
   {
     fromDate: new Date("2/01/2023"),
     toDate: new Date("2/29/2023"),
-    value: totalUsersQueryResult.value * 0.51,
+    value: Math.round(totalUsersQueryResult.value * 0.51),
   },
   {
     fromDate: new Date("3/01/2023"),
     toDate: new Date("3/31/2023"),
-    value: totalUsersQueryResult.value * 0.6,
+    value: Math.round(totalUsersQueryResult.value * 0.6),
   },
   {
     fromDate: new Date("4/01/2023"),
     toDate: new Date("4/30/2023"),
-    value: totalUsersQueryResult.value * 0.63,
+    value: Math.round(totalUsersQueryResult.value * 0.63),
   },
   {
     fromDate: new Date("5/01/2023"),
     toDate: new Date("5/31/2023"),
-    value: totalUsersQueryResult.value * 0.67,
+    value: Math.round(totalUsersQueryResult.value * 0.67),
   },
   {
     fromDate: new Date("6/01/2023"),
     toDate: new Date("6/30/2023"),
-    value: totalUsersQueryResult.value * 0.71,
+    value: Math.round(totalUsersQueryResult.value * 0.71),
   },
   {
     fromDate: new Date("7/01/2023"),
     toDate: new Date("7/31/2023"),
-    value: totalUsersQueryResult.value * 0.79,
+    value: Math.round(totalUsersQueryResult.value * 0.79),
   },
   {
     fromDate: new Date("8/01/2023"),
     toDate: new Date("8/31/2023"),
-    value: totalUsersQueryResult.value * 89,
+    value: Math.round(totalUsersQueryResult.value * 0.89),
   },
   {
     fromDate: new Date("9/01/2023"),
     toDate: new Date("9/30/2023"),
-    value: totalUsersQueryResult.value,
+    value: Math.round(totalUsersQueryResult.value),
   },
 ];
