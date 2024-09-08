@@ -9,4 +9,4 @@ export type RevenueSource = {
 export type DetailedRevenueQueryResult = {
   revenueSource: RevenueSource;
   revenueAmount: number;
-};
+}[];
