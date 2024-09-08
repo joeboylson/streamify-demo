@@ -7,4 +7,5 @@ export type Stream = {
   song: Song;
   count: number;
   userId: string;
+  date: Date;
 };

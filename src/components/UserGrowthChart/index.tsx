@@ -12,12 +12,6 @@ import { userMetricsPeriodQueryResult } from "../../constants";
 import { MetricsSnapshot } from "../../types";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { CaretDown } from "@phosphor-icons/react";
-import styled from "styled-components";
-
-const ChartWrapper = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-`;
 
 export default function UserGrowthChart() {
   return (
