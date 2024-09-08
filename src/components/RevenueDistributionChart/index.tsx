@@ -6,6 +6,7 @@ import { CaretDown } from "@phosphor-icons/react";
 import styled from "styled-components";
 import Description from "../Description";
 import { formatNumberToUSD } from "../../utils/number";
+import { useMemo } from "react";
 
 const ChartWrapper = styled.div`
   display: grid;
@@ -26,19 +27,27 @@ const ChartWrapper = styled.div`
 `;
 
 export default function RevenueDistributionChart() {
-  const revenueData = detailedRevenueQueryResult.map((i) => {
-    return {
-      key: i.revenueSource.name,
-      value: i.revenueAmount,
-    };
-  });
+  const revenueData = useMemo(
+    () =>
+      detailedRevenueQueryResult.map((i) => {
+        return {
+          key: i.revenueSource.name,
+          value: i.revenueAmount,
+        };
+      }),
+    []
+  );
 
-  const revenueDescriptionData = revenueData.map((i) => {
-    return {
-      key: `${i.key}:`,
-      value: formatNumberToUSD(i.value),
-    };
-  });
+  const revenueDescriptionData = useMemo(
+    () =>
+      revenueData.map((i) => {
+        return {
+          key: `${i.key}:`,
+          value: formatNumberToUSD(i.value),
+        };
+      }),
+    [revenueData]
+  );
 
   return (
     <GridItem sizeL={5} sizeM={3} minimal>

@@ -12,14 +12,19 @@ import GridItem from "../GridItem";
 import { topSongsQueryResult } from "../../constants";
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { CaretDown } from "@phosphor-icons/react";
+import { useMemo } from "react";
 
 export default function TopStreamedSongsChart() {
-  const topSongs = topSongsQueryResult.map(({ name, artist, value }) => {
-    return {
-      name: `${name} by ${artist.name}`,
-      value,
-    };
-  });
+  const topSongs = useMemo(
+    () =>
+      topSongsQueryResult.map(({ name, artist, value }) => {
+        return {
+          name: `${name} by ${artist.name}`,
+          value,
+        };
+      }),
+    []
+  );
 
   return (
     <GridItem sizeL={5} sizeM={3} minimal>
