@@ -1,3 +1,4 @@
+import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import {
   activeUsersQueryResult,
   topArtistQueryResult,
@@ -8,9 +9,18 @@ import {
 import { formatNumberToUSD, formatNumberWithCommas } from "../../utils/number";
 import Description from "../Description";
 import GridItem from "../GridItem";
+import { CaretDown } from "@phosphor-icons/react";
 
 export default function KeyMetrics() {
-  const usersDescriptionData = [
+  const topArtistDescriptionData = [
+    {
+      key: "Top Artist Last Month:",
+      value: topArtistQueryResult.artist.name,
+    },
+    {
+      key: "Total Streams:",
+      value: formatNumberWithCommas(totalStreamsQueryResult.value),
+    },
     {
       key: "Total Users:",
       value: formatNumberWithCommas(totalUsersQueryResult.value),
@@ -19,23 +29,6 @@ export default function KeyMetrics() {
       key: "Active Users:",
       value: formatNumberWithCommas(activeUsersQueryResult.value),
     },
-  ];
-
-  const topArtistDescriptionData = [
-    {
-      key: "Top Artist Last Month:",
-      value: topArtistQueryResult.artist.name,
-    },
-  ];
-
-  const totalSteamsDescriptionData = [
-    {
-      key: "Total Streams:",
-      value: formatNumberWithCommas(totalStreamsQueryResult.value),
-    },
-  ];
-
-  const totalRevenueDescriptionData = [
     {
       key: "Total Revenue:",
       value: formatNumberToUSD(totalRevenueQueryResult.value),
@@ -43,22 +36,19 @@ export default function KeyMetrics() {
   ];
 
   return (
-    <>
-      <GridItem sizeL={3} sizeM={3}>
-        <Description data={topArtistDescriptionData} />
-      </GridItem>
-
-      <GridItem sizeL={2} sizeM={1}>
-        <Description data={totalSteamsDescriptionData} />
-      </GridItem>
-
-      <GridItem sizeL={3} sizeM={1}>
-        <Description data={usersDescriptionData} />
-      </GridItem>
-
-      <GridItem sizeL={2} sizeM={1}>
-        <Description data={totalRevenueDescriptionData} />
-      </GridItem>
-    </>
+    <GridItem sizeL={5} sizeM={3} minimal>
+      <Accordion defaultExpanded>
+        <AccordionSummary
+          expandIcon={<CaretDown size={20} />}
+          aria-controls="panel3-content"
+          id="panel3-header"
+        >
+          Key Metrics
+        </AccordionSummary>
+        <AccordionDetails>
+          <Description data={topArtistDescriptionData} />
+        </AccordionDetails>
+      </Accordion>
+    </GridItem>
   );
 }

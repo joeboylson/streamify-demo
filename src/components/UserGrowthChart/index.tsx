@@ -50,7 +50,7 @@ export default function UserGrowthChart() {
               <Line
                 type="monotone"
                 dataKey="value"
-                stroke="#000000"
+                stroke="#82b1ff"
                 activeDot={{ r: 8 }}
               />
             </LineChart>

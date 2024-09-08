@@ -39,7 +39,7 @@ export default function TopStreamedSongsChart() {
               <YAxis />
               <Tooltip />
               <Legend />
-              <Bar dataKey="value" />
+              <Bar dataKey="value" fill="#82b1ff" />
             </BarChart>
           </ResponsiveContainer>
         </AccordionDetails>

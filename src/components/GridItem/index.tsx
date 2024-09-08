@@ -20,6 +20,7 @@ export default function GridItem({ children, sizeL, sizeM, minimal }: _props) {
     border-radius: 8px;
     box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
       0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+
     @media (max-width: 800px) {
       grid-column: span ${sizeM};
     }
@@ -32,7 +33,7 @@ export default function GridItem({ children, sizeL, sizeM, minimal }: _props) {
     `
       width: 100%;
       padding: 0 !important;
-      border-radius: 0px;
+      border-radius: 4px;
       box-shadow: none;
       `}
   `;

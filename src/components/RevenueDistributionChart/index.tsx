@@ -5,15 +5,23 @@ import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { CaretDown } from "@phosphor-icons/react";
 import styled from "styled-components";
 import Description from "../Description";
+import { formatNumberToUSD } from "../../utils/number";
 
 const ChartWrapper = styled.div`
   display: grid;
   grid-template-columns: 500px 1fr;
-  gap: 12px;
+  gap: 72px;
   align-items: start;
 
-  @media (max-width: 800px) {
+  @media (max-width: 1000px) {
     grid-template-columns: 1fr;
+    gap: 24px !important;
+  }
+
+  .recharts-responsive-container {
+    background-color: ghostwhite;
+    border-radius: 8px;
+    border: 1px solid #ddd;
   }
 `;
 
@@ -22,6 +30,13 @@ export default function RevenueDistributionChart() {
     return {
       key: i.revenueSource.name,
       value: i.revenueAmount,
+    };
+  });
+
+  const revenueDescriptionData = revenueData.map((i) => {
+    return {
+      key: `${i.key}:`,
+      value: formatNumberToUSD(i.value),
     };
   });
 
@@ -48,12 +63,13 @@ export default function RevenueDistributionChart() {
                   innerRadius={20}
                   outerRadius={80}
                   label
+                  fill="#82b1ff"
                 />
 
                 <Tooltip />
               </PieChart>
             </ResponsiveContainer>
-            <Description data={revenueData} />
+            <Description data={revenueDescriptionData} />
           </ChartWrapper>
         </AccordionDetails>
       </Accordion>
