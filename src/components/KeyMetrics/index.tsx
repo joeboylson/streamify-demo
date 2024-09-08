@@ -44,19 +44,19 @@ export default function KeyMetrics() {
 
   return (
     <>
-      <GridItem sizeL={2} sizeM={3}>
+      <GridItem sizeL={3} sizeM={3}>
         <Description data={topArtistDescriptionData} />
       </GridItem>
 
-      <GridItem sizeL={1} sizeM={1}>
-        <Description data={usersDescriptionData} />
-      </GridItem>
-
-      <GridItem sizeL={1} sizeM={1}>
+      <GridItem sizeL={2} sizeM={1}>
         <Description data={totalSteamsDescriptionData} />
       </GridItem>
 
-      <GridItem sizeL={1} sizeM={1}>
+      <GridItem sizeL={3} sizeM={1}>
+        <Description data={usersDescriptionData} />
+      </GridItem>
+
+      <GridItem sizeL={2} sizeM={1}>
         <Description data={totalRevenueDescriptionData} />
       </GridItem>
     </>

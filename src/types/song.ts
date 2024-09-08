@@ -5,4 +5,8 @@ export type Song = {
   artist: Artist;
 };
 
-export type TopSongsQueryResult = Song[];
+export type TopSongResult = Song & {
+  value: number;
+};
+
+export type TopSongsQueryResult = TopSongResult[];

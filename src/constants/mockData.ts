@@ -76,52 +76,25 @@ export const detailedRevenueQueryResult: DetailedRevenueQueryResult = [
     revenueSource: {
       name: "Advertisements",
     },
-    revenueAmount: totalRevenueQueryResult.value * 0.2,
+    revenueAmount: Math.round(totalRevenueQueryResult.value * 0.2),
   },
   {
     revenueSource: {
       name: "Subscriptions",
     },
-    revenueAmount: totalRevenueQueryResult.value * 0.4,
+    revenueAmount: Math.round(totalRevenueQueryResult.value * 0.4),
   },
   {
     revenueSource: {
       name: "Royalties",
     },
-    revenueAmount: totalRevenueQueryResult.value * 0.35,
+    revenueAmount: Math.round(totalRevenueQueryResult.value * 0.35),
   },
   {
     revenueSource: {
       name: "Other",
     },
-    revenueAmount: totalRevenueQueryResult.value * 0.05,
-  },
-];
-
-/**
- * Songs
- */
-
-export const topSongsQueryResult: TopSongsQueryResult = [
-  {
-    name: "Birds of a Feather",
-    artist: billieEilish,
-  },
-  {
-    name: "Taste",
-    artist: sabrinaCarpenter,
-  },
-  {
-    name: "I Can Do It With a Broken Heart",
-    artist: sabrinaCarpenter,
-  },
-  {
-    name: "Too Sweet",
-    artist: sabrinaCarpenter,
-  },
-  {
-    name: "Lunch",
-    artist: billieEilish,
+    revenueAmount: Math.round(totalRevenueQueryResult.value * 0.05),
   },
 ];
 
@@ -134,6 +107,38 @@ export const totalStreamsQueryResult: TotalStreamsQueryResult = {
   toDate: today,
   value: random(80000, 1000000),
 };
+
+/**
+ * Songs
+ */
+
+export const topSongsQueryResult: TopSongsQueryResult = [
+  {
+    name: "Birds of a Feather",
+    artist: billieEilish,
+    value: Math.round(totalStreamsQueryResult.value * 0.01),
+  },
+  {
+    name: "Taste",
+    artist: sabrinaCarpenter,
+    value: Math.round(totalStreamsQueryResult.value * 0.009),
+  },
+  {
+    name: "I Can Do It With a Broken Heart",
+    artist: sabrinaCarpenter,
+    value: Math.round(totalStreamsQueryResult.value * 0.007),
+  },
+  {
+    name: "Too Sweet",
+    artist: sabrinaCarpenter,
+    value: Math.round(totalStreamsQueryResult.value * 0.0065),
+  },
+  {
+    name: "Lunch",
+    artist: billieEilish,
+    value: Math.round(totalStreamsQueryResult.value * 0.004),
+  },
+];
 
 /**
  * Users
